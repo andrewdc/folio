@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
 import Band from '../components/Band.astro';
+import Cta from '../components/Cta.astro';
 ---
 
 <html lang="en">
@@ -61,17 +62,7 @@ import Band from '../components/Band.astro';
             design is about making the world better for people
           </strong>.
         </p>
-        <div class="cta">
-          <a
-            href="https://drive.google.com/file/d/1cEdhCwq2c_LoSzc7invI8kRxw-OhpSWh/view?usp=sharing"
-          >
-            My Resume
-          </a> | <a href="www.linkedin.com/in/andrewdc
-
-">
-            Connect with me on LinkedIn
-          </a>
-        </div>
+        <Cta />
       </Band>
 
       <Section
@@ -111,12 +102,12 @@ import Band from '../components/Band.astro';
       >
         <p>
           Time off management was a critical feature for our users at Arcoro.
-          Our management and supervisor customers needed to be able to create
-          and assign time off plans, and approve requests for their teams. Our
-          crew member customers needed to be able to easily see their time off
-          balances, and easily make requests.
+          Our administrators needed to be able to create
+          and assign time off plans, our supervisors needed to approve requests for their teams, and our crew member users needed to be able to easily see their time off
+          balances, and make requests.
         </p>
-        <p>Our UX team design a</p>
+        <p>Our UX team designed an intuitive system for plan administrators to create complex tier-based plans. The math for each tier was pre-calculated and filled based on a previous tier, allowing the admins to clearly understand each segment, and rapidly add tiers a step at a time without making errors.</p>
+        <p>For supervisors and crew members, we created a simple visual system to easily make, approve, and modify time off requests via our mobile application. Plan types, balances, and statuses were easily understandable at a glance, streamlining the process for all users.</p>
       </Section>
       <Section
         title="Design System: PowerSchool"
@@ -195,17 +186,5 @@ import Band from '../components/Band.astro';
     title="Let's connect!"
     address="Example Address, 6 - Somewhere in the world (99999), Spain"
     text="email, linkedin, etc"
-  >
-    <div class="cta">
-      <a
-        href="https://drive.google.com/file/d/1cEdhCwq2c_LoSzc7invI8kRxw-OhpSWh/view?usp=sharing"
-      >
-        My Resume
-      </a> | <a href="www.linkedin.com/in/andrewdc
-
-">
-        Connect with me on LinkedIn
-      </a>
-    </div>
-  </Footer>
+  />
 </html>

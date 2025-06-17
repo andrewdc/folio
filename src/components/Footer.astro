@@ -1,25 +1,28 @@
 ---
+import Cta from '../components/Cta.astro';
 const { title, address, text } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="p-4  md:p-8 lg:p-10 bg-gray-800">
+<footer class="p-4 md:p-8 lg:p-10 bg-gray-800">
   <div class="mx-auto max-w-screen-xl text-center">
     <a
-      href="https://github.com/Inushin/simpleAstroLandingPageTheme"
+      href="www.linkedin.com/in/andrewdc"
       class="flex justify-center items-center text-2xl font-semibold text-white hover:underline"
     >
       {title}
     </a>
-    <a
+
+   <Cta />
+    <!-- <a
       href="https://www.google.com/maps/"
       class="my-6 text-gray-400 hover:underline"
     >
       {address}
-    </a>
-    <p class="my-6 text-gray-400">
+    </a> -->
+    <!-- <p class="my-6 text-gray-400">
       {text}
-    </p>
+    </p> -->
     <!-- <span class="text-sm sm:text-center text-gray-400"
       >© {currentYear}
       <a href="https://kuroshitec.com" class="hover:underline">KuroShi Tec</a>.
@@ -28,3 +31,7 @@ const currentYear = new Date().getFullYear();
   </div>
   <slot />
 </footer>
+
+<style>
+  
+</style>
