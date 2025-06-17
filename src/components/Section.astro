@@ -1,0 +1,94 @@
+---
+import ImageGrid from '../components/ImageGrid.astro';
+import ImageRow from '../components/ImageGrid.astro';
+const {
+  title,
+  text,
+  imgSrc,
+  imgAlt,
+  imagePosition,
+  gallery = false,
+} = Astro.props;
+---
+
+<section class={gallery === 'row' ? 'row' : 'other'}>
+  <div class="section-content">
+    <h2
+      class="mb-3 text-2xl font-bold leading-tight tracking-tight text-white md:text-4xl"
+    >
+      {title}
+    </h2>
+    <slot />
+  </div>
+  <div class="gallery">
+    <!-- {
+      gallery ? (
+        <ImageGrid folder={imgSrc} />
+      ) : (
+        <img class="project-slide" src={imgSrc} alt={imgAlt} />
+      )
+    } -->
+    <!-- {gallery === 'grid' && <ImageGrid folder={imgSrc} />}
+    {gallery === 'row' && <ImageRow folder={imgSrc} />}
+    {gallery !== 'grid' || gallery !== 'row' && <img class="project-slide" src={imgSrc} alt={imgAlt} />} -->
+    {
+      gallery === 'grid' ? (
+        <ImageGrid folder={imgSrc} />
+      ) : gallery === 'row' ? (
+        <ImageRow folder={imgSrc} />
+      ) : (
+        <img class="project-slide" src={imgSrc} alt={imgAlt} />
+      )
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: row;
+    margin: var(--space-lg);
+    padding: var(--space-lg);
+    background: #1f3042;
+    gap: var(--space-lg);
+    border-radius: var(--border-rad);
+  }
+  section.row {
+    flex-direction: column;
+  }
+  .section-content {
+    flex: 1 0 50%;
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column;
+    }
+  }
+
+  .gallery {
+    display: flex;
+    flex: 0 1 auto;
+  }
+  .project-slide {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* transition for smooth scaling */
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  .project-slide:hover {
+    /* slightly scale up */
+    transform: scale(1.2);
+
+    /* bring it above neighbors */
+    z-index: 1;
+
+    /* deepen the shadow for a “lifted” look */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+</style>

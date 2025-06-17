@@ -1,0 +1,79 @@
+---
+const { folder = 'research' } = Astro.props;
+
+// 1) Use a relative glob from this file into your assets:
+//    `../assets/galleries/**/*.{jpg,jpeg,png,webp}`
+// 2) Tell Vite to load them eagerly at build‑time and
+//    to return the default export (the URL string).
+const allImages = import.meta.glob(
+  '../assets/galleries/**/*.{jpg,jpeg,png,webp}',
+  {
+    eager: true,
+    import: 'default',
+  }
+);
+
+// Filter & normalize into a pure string array:
+const images = Object.entries(allImages)
+  .filter(([filePath]) => filePath.includes(`/galleries/${folder}/`))
+  .map(([, mod]) => {
+    // If the module itself *is* a string, use it:
+    if (typeof mod === 'string') {
+      return mod;
+    }
+    // Otherwise, try common keys for the URL:
+    if ('default' in mod && typeof mod.default === 'string') {
+      return mod.default;
+    }
+    if ('src' in mod && typeof mod.src === 'string') {
+      return mod.src;
+    }
+    // Fallback: grab the first export value and hope for a string
+    const firstVal = Object.values(mod)[0];
+    return typeof firstVal === 'string' ? firstVal : '';
+  })
+  // Finally, drop any empties (just in case)
+  .filter(Boolean);
+---
+
+<style>
+  .image-grid {
+    position:relative;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: minmax(300px, 1fr);
+    gap: 1rem;
+    /* ensure hovered images can overflow their cell */
+    overflow: visible;
+  }
+
+  .image-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    /* base styles */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    /* transition for smooth scaling */
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  .image-grid img:hover {
+    /* slightly scale up */
+    transform: scale(1.2);
+    /* bring it above neighbors */
+    z-index: 1;
+
+    /* deepen the shadow for a “lifted” look */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<div class="image-grid">
+  {images.map((src) => <img src={src} alt="Gallery image" loading="lazy" />)}
+</div>

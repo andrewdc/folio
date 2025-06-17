@@ -1,0 +1,165 @@
+---
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Band from '../components/Band.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Gudea|Rancho"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:image" content="img/img_00.jpg" />
+    <meta
+      name="description"
+      property="og:description"
+      content="Andrew Colclough"
+    />
+    <title>Andrew Colclough - UX/UI Designer</title>
+  </head>
+  <body>
+    <header class="landing-header">
+      <Hero
+        title="Andrew Colclough - UX/UI Designer"
+        text="I specialize in merging user needs with art and tech to deliver products that make tasks easier, better, and more enjoyable."
+        imgSrc="img/code.jpg"
+      />
+    </header>
+    <main>
+      <Band>
+        <h2>Design Philosophy</h2>
+        <p>
+          I've always said that design is the perfect merging of art and
+          usefulness. The goal in UI design is to make everyday things actually
+          pleasant. Good design should bring beauty and joy, alongside utility,
+          to people's daily lives.
+        </p>
+        <p>
+          Sometimes this means the design needs to get out of the way so people
+          can get things done. Sometimes it's a rich experience that makes you
+          excited and happy.
+        </p>
+      </Band>
+
+      <Section
+        title="ExakTime Company Sign-up Refresh"
+        imagePosition="right"
+        imgSrc="et-signup"
+        imgAlt="ExakTime Time Off Management"
+        gallery="row"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+          similique voluptatum corrupti dolore, assumenda sapiente unde
+          consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga
+          omnis sed nulla. Soluta, quam."
+        </p>
+      </Section>
+
+      <Section
+        title="ExakTime Time Off"
+        imagePosition="right"
+        imgSrc="/img/projects/etTimeOff.jpg"
+        imgAlt="ExakTime Time Off Management"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+          similique voluptatum corrupti dolore, assumenda sapiente unde
+          consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga
+          omnis sed nulla. Soluta, quam."
+        </p>
+      </Section>
+
+      <Section
+        title="Design System: PowerSchool"
+        imagePosition="right"
+        imgSrc="powerschool"
+        imgAlt="Img Alt"
+        gallery="grid"
+      >
+        <p>
+          I was tapped, along with two other developers to build a company-wide
+          design system for PowerSchool from the ground up. It is a component
+          library built with Sass, Angular 2, and Polymer, and consumed by
+          several applications.
+        </p>
+
+        <p>
+          The system utilizes a flexible theme system, where we can provide the
+          base design for the organization, but also allow each team the
+          flexibility to customize and extend the library to fit their
+          application’s unique needs.
+        </p>
+      </Section>
+
+      <Section
+        title="Design System: Incomm Digital Solutions"
+        imagePosition="right"
+        imgSrc="incomm"
+        imgAlt="Img Alt"
+        gallery="grid"
+      >
+        <p>
+          At Incomm, I teamed up with another designer to build a modular Sass
+          design system. At the time, design systems were only just begning to
+          gain popularity. We built this from the ground up with some innovative
+          tools, which allowed any appication to customize the theme of our
+          components, but then also have a safe fallback to our base UX design.
+        </p>
+        <p>
+          This system (which we called Nxsass) allowed us to create and support
+          several teams and applications across our organization. Also, we had a
+          great area for prototyping user experience, and interface designs.
+        </p>
+      </Section>
+
+      <Section
+        title="Prototypes"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique voluptatum corrupti dolore, assumenda sapiente unde consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga omnis sed nulla. Soluta, quam."
+        imagePosition="right"
+        imgSrc="img/img_01.jpg"
+        imgAlt="Img Alt"
+      />
+      <Section
+        title="Testing and Improvement"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique voluptatum corrupti dolore, assumenda sapiente unde consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga omnis sed nulla. Soluta, quam."
+        imagePosition="right"
+        imgSrc="img/img_01.jpg"
+        imgAlt="Img Alt"
+      />
+      <Section
+        title="Design Systems"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique voluptatum corrupti dolore, assumenda sapiente unde consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga omnis sed nulla. Soluta, quam."
+        imagePosition="right"
+        imgSrc="img/img_01.jpg"
+        imgAlt="Img Alt"
+      />
+      <Section
+        title="Bonus: Illustration"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique voluptatum corrupti dolore, assumenda sapiente unde consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga omnis sed nulla. Soluta, quam."
+        imagePosition="right"
+        imgSrc="img/img_01.jpg"
+        imgAlt="Img Alt"
+      />
+    </main>
+  </body>
+  <Footer
+    title="Simple Astro Landing Page Theme"
+    address="Example Address, 6 - Somewhere in the world (99999), Spain"
+    text="A simple Landing Page built with Astro, TailwindCSS and TypeScript."
+  />
+</html>
