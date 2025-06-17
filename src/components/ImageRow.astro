@@ -40,7 +40,8 @@ const images = Object.entries(allImages)
   .image-grid {
     position:relative;
     display: flex;
-    gap:var(--sapce);
+    flex-wrap:wrap;
+    gap:var(--space);
     /* ensure hovered images can overflow their cell */
     overflow: visible;
   }
@@ -48,6 +49,9 @@ const images = Object.entries(allImages)
   .image-grid img {
     display: block;
     width: 100%;
+    flex:1 1 250px;
+    min-width:150px;
+    max-width:300px;
     height: auto;
     object-fit: cover;
 

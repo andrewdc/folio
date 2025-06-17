@@ -17,10 +17,11 @@ import Band from '../components/Band.astro';
       rel="stylesheet"
     /> -->
     <link
-      href="https://fonts.googleapis.com/css?family=Gudea|Rancho"
+      href="https://fonts.googleapis.com/css?family=Cambo|Roboto:300"
       rel="stylesheet"
       type="text/css"
     />
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="img/img_00.jpg" />
@@ -29,44 +30,76 @@ import Band from '../components/Band.astro';
       property="og:description"
       content="Andrew Colclough"
     />
-    <title>Andrew Colclough - UX/UI Designer</title>
+    <title>Andrew Colclough - UX & UI Designer</title>
   </head>
   <body>
     <header class="landing-header">
       <Hero
-        title="Andrew Colclough - UX/UI Designer"
+        title="Andrew Colclough - UX & UI Leader"
         text="I specialize in merging user needs with art and tech to deliver products that make tasks easier, better, and more enjoyable."
         imgSrc="img/code.jpg"
       />
     </header>
     <main>
       <Band>
-        <h2>Design Philosophy</h2>
+        <h2>My Design Philosophy</h2>
         <p>
-          I've always said that design is the perfect merging of art and
-          usefulness. The goal in UI design is to make everyday things actually
-          pleasant. Good design should bring beauty and joy, alongside utility,
-          to people's daily lives.
+          I've always believed that design is the perfect combination of <em>
+            art
+          </em> and
+          <em>usefulness</em>. The goal in UX & UI design is to make everyday
+          things actually pleasant. Good design should bring beauty and joy,
+          alongside utility, to people's daily experiences.
         </p>
         <p>
-          Sometimes this means the design needs to get out of the way so people
-          can get things done. Sometimes it's a rich experience that makes you
-          excited and happy.
+          Often this means a design needs to <em>get out of the way</em> so people
+          can get things done. Other times it's adding a richness to the experience
+          that leaves you excited and happy.
         </p>
+        <p>
+          In every case, <strong>
+            design is about making the world better for people
+          </strong>.
+        </p>
+        <div class="cta">
+          <a
+            href="https://drive.google.com/file/d/1cEdhCwq2c_LoSzc7invI8kRxw-OhpSWh/view?usp=sharing"
+          >
+            My Resume
+          </a> | <a href="www.linkedin.com/in/andrewdc
+
+">
+            Connect with me on LinkedIn
+          </a>
+        </div>
       </Band>
 
       <Section
         title="ExakTime Company Sign-up Refresh"
         imagePosition="right"
         imgSrc="et-signup"
-        imgAlt="ExakTime Time Off Management"
+        imgAlt="ExakTime Sign-up Refresh"
         gallery="row"
       >
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-          similique voluptatum corrupti dolore, assumenda sapiente unde
-          consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga
-          omnis sed nulla. Soluta, quam."
+          At Arcoro, our time tracking application ExakTime had a quick set-up
+          flow that was clunky and due for a refresh. The sign up flow needed to
+          be self-serve, and minimize friction for the user. Additionally, it
+          needed an aesthetic refresh that was on brand, and built excitement as
+          the user was onboarded to ExakTime.
+        </p>
+
+        <p>
+          The resulting design combined elements of our new brand, and also
+          streamlined the process into clear steps, allowing our users to focus
+          on the one current thing they needed to do with zero distractions.
+        </p>
+
+        <p>
+          UI hints were added to help avoid mistakes, and give the user a
+          preview of how the information they entered would effect their system.
+          For instance, the Company Url field gives immediate feedback based on
+          what is entered.
         </p>
       </Section>
 
@@ -77,13 +110,14 @@ import Band from '../components/Band.astro';
         imgAlt="ExakTime Time Off Management"
       >
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-          similique voluptatum corrupti dolore, assumenda sapiente unde
-          consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga
-          omnis sed nulla. Soluta, quam."
+          Time off management was a critical feature for our users at Arcoro.
+          Our management and supervisor customers needed to be able to create
+          and assign time off plans, and approve requests for their teams. Our
+          crew member customers needed to be able to easily see their time off
+          balances, and easily make requests.
         </p>
+        <p>Our UX team design a</p>
       </Section>
-
       <Section
         title="Design System: PowerSchool"
         imagePosition="right"
@@ -102,7 +136,7 @@ import Band from '../components/Band.astro';
           The system utilizes a flexible theme system, where we can provide the
           base design for the organization, but also allow each team the
           flexibility to customize and extend the library to fit their
-          application’s unique needs.
+          application's unique needs.
         </p>
       </Section>
 
@@ -115,9 +149,9 @@ import Band from '../components/Band.astro';
       >
         <p>
           At Incomm, I teamed up with another designer to build a modular Sass
-          design system. At the time, design systems were only just begning to
+          design system. At the time, design systems were only just begining to
           gain popularity. We built this from the ground up with some innovative
-          tools, which allowed any appication to customize the theme of our
+          tools, which allowed any application to customize the theme of our
           components, but then also have a safe fallback to our base UX design.
         </p>
         <p>
@@ -127,7 +161,7 @@ import Band from '../components/Band.astro';
         </p>
       </Section>
 
-      <Section
+      <!-- <Section
         title="Prototypes"
         text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique voluptatum corrupti dolore, assumenda sapiente unde consectetur, magni laboriosam deserunt nisi, cupiditate sunt quam fuga omnis sed nulla. Soluta, quam."
         imagePosition="right"
@@ -154,12 +188,24 @@ import Band from '../components/Band.astro';
         imagePosition="right"
         imgSrc="img/img_01.jpg"
         imgAlt="Img Alt"
-      />
+      /> -->
     </main>
   </body>
   <Footer
-    title="Simple Astro Landing Page Theme"
+    title="Let's connect!"
     address="Example Address, 6 - Somewhere in the world (99999), Spain"
-    text="A simple Landing Page built with Astro, TailwindCSS and TypeScript."
-  />
+    text="email, linkedin, etc"
+  >
+    <div class="cta">
+      <a
+        href="https://drive.google.com/file/d/1cEdhCwq2c_LoSzc7invI8kRxw-OhpSWh/view?usp=sharing"
+      >
+        My Resume
+      </a> | <a href="www.linkedin.com/in/andrewdc
+
+">
+        Connect with me on LinkedIn
+      </a>
+    </div>
+  </Footer>
 </html>

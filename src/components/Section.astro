@@ -1,6 +1,6 @@
 ---
 import ImageGrid from '../components/ImageGrid.astro';
-import ImageRow from '../components/ImageGrid.astro';
+import ImageRow from '../components/ImageRow.astro';
 const {
   title,
   text,
@@ -13,9 +13,7 @@ const {
 
 <section class={gallery === 'row' ? 'row' : 'other'}>
   <div class="section-content">
-    <h2
-      class="mb-3 text-2xl font-bold leading-tight tracking-tight text-white md:text-4xl"
-    >
+    <h2>
       {title}
     </h2>
     <slot />
@@ -53,8 +51,12 @@ const {
     gap: var(--space-lg);
     border-radius: var(--border-rad);
   }
+  h2 {
+    margin:0 0 1.2em 0;
+  }
   section.row {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   .section-content {
     flex: 1 0 50%;
@@ -83,7 +85,8 @@ const {
 
   .project-slide:hover {
     /* slightly scale up */
-    transform: scale(1.2);
+    transform: scale(1.4) translateX(-5vw);
+  
 
     /* bring it above neighbors */
     z-index: 1;

@@ -20,10 +20,11 @@ const currentYear = new Date().getFullYear();
     <p class="my-6 text-gray-400">
       {text}
     </p>
-    <span class="text-sm sm:text-center text-gray-400"
+    <!-- <span class="text-sm sm:text-center text-gray-400"
       >© {currentYear}
       <a href="https://kuroshitec.com" class="hover:underline">KuroShi Tec</a>.
       All Rights Reserved.</span
-    >
+    > -->
   </div>
+  <slot />
 </footer>

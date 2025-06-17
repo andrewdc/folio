@@ -38,7 +38,7 @@ const images = Object.entries(allImages)
 
 <style>
   .image-grid {
-    position:relative;
+    position: relative;
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
     grid-template-columns: minmax(300px, 1fr);
@@ -65,7 +65,7 @@ const images = Object.entries(allImages)
 
   .image-grid img:hover {
     /* slightly scale up */
-    transform: scale(1.2);
+    transform: scale(1.2) translateX(-5vw);
     /* bring it above neighbors */
     z-index: 1;
 

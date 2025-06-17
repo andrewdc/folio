@@ -10,38 +10,62 @@
   --color-section: #1f3042;
   --color-band: #fff;
   --color-text: #fff;
+  --font-head: "Roboto";
+  --font-body: "Cambo"
 }
 
 html {
   min-width: 550px;
-  font-family: "Gudea", helvetica, Arial, sans-serif;
+  font-family: var(--font-body), serif;
   background: var(--color-bg);
 }
 
 
 .landing-header {
   h1 {
-    font-family: "Rancho", cursive, system-ui;
-    font-size: 7em;
-    font-weight: 1;
+    font-family: var(--font-head), sans-serif, system-ui;
+    font-size: 4em;
+    font-weight: 600;
+    color:#fff;
+    line-height: 150%;
+    margin:var(--space-lg) var(--space-lg) var(--space-sm) var(--space-lg);
   }
   h2 {
+    font-family: var(--font-head), helvetica, Arial, sans-serif;
     font-size: 2em;
-    margin-left: 0.5em;
-    margin-top: 1em;
+    margin: var(--space-lg);
+    line-height: 150%;
+    color:#fff;
   }
+    @media (max-width: 1200px) {
+      h1 {font-size: 3em;}
+      h2 {
+        font-size: 2em;
+      }
+    }
+    @media (max-width: 768px){
+      h1 {
+          font-size: em;
+        }
+      
+        h2 {
+          font-size: 1em;
+        }
+     }
 }
 
 /* Headers and content */
 
 h2 {
-  font-family: "Gudea", helvetica, Arial, sans-serif;
+  font-family: var(--font-head), helvetica, Arial, sans-serif;
   /* font-weight: 600; */
   font-size: 2.25rem;
   line-height: 2.5rem;
-   letter-spacing: -0.025em;
+  margin: 0.5em 0 1.2em 0;
+   /* letter-spacing: -0.025em; */
 }
 
 p {
   margin-bottom:var(--space);
+  line-height:185%;
 }
