@@ -1,5 +1,5 @@
 ---
-const { title, text, imgSrc } = Astro.props;
+const { name, title, text, imgSrc } = Astro.props;
 ---
 
 <section
@@ -13,7 +13,7 @@ const { title, text, imgSrc } = Astro.props;
       <h1
         class=""
       >
-        {title}
+       <span>{name}</span> <span>{title}</span> 
       </h1>
       <h2
         class="subhead"
@@ -27,5 +27,12 @@ const { title, text, imgSrc } = Astro.props;
 <style>
   section {
     padding:var(--space-lg);
+  }
+  h1 {
+    display:flex;
+    flex-wrap: wrap;
+    gap:var(--space-lg);
+    font-size:6em;
+    font-weight:600;
   }
 </style>
