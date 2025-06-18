@@ -10,8 +10,8 @@
   --color-section: #1f3042;
   --color-band: #fff;
   --color-text: #fff;
-  --font-head: "Roboto";
-  --font-body: "Cambo"
+  --font-head: "Montserrat";
+  --font-body: "Hind"
 }
 
 html {
@@ -25,7 +25,7 @@ html {
   h1 {
     font-family: var(--font-head), sans-serif, system-ui;
     font-size: 6em;
-    font-weight: 600;
+    font-weight: 100;
     color:#fff;
     line-height: 150%;
     margin:var(--space-lg) var(--space-lg) var(--space-sm) var(--space-lg);
@@ -33,6 +33,7 @@ html {
   h2 {
     font-family: var(--font-head), helvetica, Arial, sans-serif;
     font-size: 2em;
+    font-weight: 100;
     margin: var(--space-lg);
     line-height: 150%;
     color:#fff;
@@ -58,7 +59,7 @@ html {
 
 h2 {
   font-family: var(--font-head), helvetica, Arial, sans-serif;
-  /* font-weight: 600; */
+  font-weight: 100;
   font-size: 3.25rem;
   line-height: 120%;
   margin: 0.5em 0 1.2em 0;
