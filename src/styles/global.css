@@ -10,49 +10,14 @@
   --color-section: #1f3042;
   --color-band: #fff;
   --color-text: #fff;
-  --font-head: "Montserrat";
-  --font-body: "Hind"
+  --font-head: "Rokkitt";
+  --font-body: "Raleway"
 }
 
 html {
   min-width: 550px;
-  font-family: var(--font-body), serif;
+  font-family: var(--font-body), sans-serif;
   background: var(--color-bg);
-}
-
-
-.landing-header {
-  h1 {
-    font-family: var(--font-head), sans-serif, system-ui;
-    font-size: 6em;
-    font-weight: 100;
-    color:#fff;
-    line-height: 150%;
-    margin:var(--space-lg) var(--space-lg) var(--space-sm) var(--space-lg);
-  }
-  h2 {
-    font-family: var(--font-head), helvetica, Arial, sans-serif;
-    font-size: 2em;
-    font-weight: 100;
-    margin: var(--space-lg);
-    line-height: 150%;
-    color:#fff;
-  }
-    @media (max-width: 1200px) {
-      h1 {font-size: 4em;}
-      h2 {
-        font-size: 2em;
-      }
-    }
-    @media (max-width: 768px){
-      h1 {
-          font-size: 3em;
-        }
-      
-        h2 {
-          font-size: 1.5em;
-        }
-     }
 }
 
 /* Headers and content */
@@ -67,7 +32,7 @@ h2 {
 }
 
 p {
-  margin-bottom:var(--space);
+  margin-bottom:var(--space-lg);
   line-height:185%;
   font-size:20px;
 }

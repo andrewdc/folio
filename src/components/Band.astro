@@ -3,12 +3,22 @@
 ---
 
 <div class="band">
-	<slot />
+	<div class="content">
+		<slot />
+	</div>
 </div>
 <style>
 	.band {
 		background: var(--color-band);
 		padding: var(--space-xlg) 15vw;
 	}
-
+	.content {
+		margin: 0 auto;
+		max-width: 960px;
+	}
+	@media (max-width: 1200px) {
+		.band {
+			padding: var(--space-xlg) 10vw;
+		}
+	}
 </style>
