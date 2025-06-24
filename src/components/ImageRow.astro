@@ -7,7 +7,7 @@ const { folder = 'research' } = Astro.props;
 // 2) Tell Vite to load them eagerly at build‑time and
 //    to return the default export (the URL string).
 const allImages = import.meta.glob(
-  '../assets/galleries/**/*.{jpg,jpeg,png,webp}',
+  '../assets/galleries/**/*.{jpg,jpeg,png,webp,gif}',
   {
     eager: true,
     import: 'default',

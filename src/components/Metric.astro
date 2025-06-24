@@ -1,0 +1,32 @@
+---
+const { user, improvement, stat } = Astro.props;
+---
+
+<div class="block">
+	{user && <div class="user">{user}</div>}
+	{stat && <div class="stat">{stat}</div>}
+	{improvement && <div class="improvement">{improvement}</div>}
+</div>
+
+<style>
+	.block {
+		padding: var(--space);
+		background: #325275;
+		border-radius: var(--border-rad);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.user {
+		text-align: center;
+	}
+	.stat {
+		font-family: var(--font-head);
+		font-weight: 800;
+		font-size: 54px;
+		text-align: center;
+	}
+	.improvement {
+		text-align: center;
+	}
+</style>

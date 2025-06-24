@@ -5,6 +5,8 @@ import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
 import Band from '../components/Band.astro';
 import Cta from '../components/Cta.astro';
+import Metric from '../components/Metric.astro';
+import Stats from '../components/Stats.astro';
 ---
 
 <html lang="en">
@@ -49,8 +51,7 @@ import Cta from '../components/Cta.astro';
         </p>
         <p>
           This only happens through empathy, listening, and genuine
-          understanding. Sometimes this means a design needs to disappear — <em
-          >
+          understanding. Sometimes this means a design needs to disappear — <em>
             to get out of the way
           </em> so people can get things done. Other times it's adding a richness
           to an experience that leaves you delighted.
@@ -90,6 +91,11 @@ import Cta from '../components/Cta.astro';
           For instance, the Company Url field gives immediate feedback based on
           what is entered.
         </p>
+        <!-- <Stats>
+          <Metric user="people" stat="100%" improvement="better things" />
+          <Metric user="people" stat="100%" improvement="better things" />
+          <Metric user="people" stat="100%" improvement="better things" />
+        </Stats> -->
       </Section>
 
       <Section
@@ -118,6 +124,25 @@ import Cta from '../components/Cta.astro';
           application. Plan types, balances, and statuses were easily
           understandable at a glance, streamlining the process for all users.
         </p>
+        <h3>Outcomes</h3>
+        <Stats>
+          <Metric
+            user="Admins:"
+            stat="Simple"
+            improvement="plan creation and management"
+          />
+          <Metric
+            user="Supervisors:"
+            stat="Timely"
+            improvement="requests and approvals"
+          />
+          <Metric
+            user="Crew Members:"
+            stat="Visible"
+            improvement="balances and requests"
+          />
+        </Stats>
+      </Section>
       </Section>
       <Section
         title="PowerSchool: Design System"
@@ -139,6 +164,16 @@ import Cta from '../components/Cta.astro';
           flexibility to customize and extend the library to fit their
           application's unique needs.
         </p>
+        <h3 class="outcomes">Outcomes</h3>
+        <Stats>
+          <Metric user="Design & Dev:" stat="1" improvement="source for UI/UX" />
+          <Metric user="User profiles:" stat="4" improvement="Admins, Teachers, Parents, Students" />
+          <Metric
+            user="School Systems:"
+            stat="15,000"
+            improvement="unified user experiences"
+          />
+        </Stats>
       </Section>
 
       <Section
