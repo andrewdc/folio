@@ -1,0 +1,56 @@
+---
+// @ts-nocheck
+---
+
+<style>
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+
+	.block {
+		padding: 1.5rem;
+		border-radius: 0.75rem;
+		/* background: #f8f8f8; */
+		border-top: 4px solid #999;
+		border-bottom: 4px solid #999;
+	}
+
+	.challenge {
+		border-color: #e63946;
+		h3 {
+			color: #e63946;
+		}
+	
+	}
+
+	.solution {
+		border-color: #3cdac7;
+		h3 {
+			color: #3cdac7;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.wrapper {
+			flex-direction: row;
+		}
+
+		.block {
+			flex: 1;
+		}
+	}
+</style>
+
+<div class="wrapper">
+	<div class="block challenge">
+		<h3>Challenge</h3>
+		<slot name="challenge" />
+	</div>
+	<div class="block solution">
+		<h3>Solution</h3>
+		<slot name="solution" />
+	</div>
+</div>
