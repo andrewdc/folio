@@ -19,16 +19,6 @@ const {
     <slot />
   </div>
   <div class="gallery">
-    <!-- {
-      gallery ? (
-        <ImageGrid folder={imgSrc} />
-      ) : (
-        <img class="project-slide" src={imgSrc} alt={imgAlt} />
-      )
-    } -->
-    <!-- {gallery === 'grid' && <ImageGrid folder={imgSrc} />}
-    {gallery === 'row' && <ImageRow folder={imgSrc} />}
-    {gallery !== 'grid' || gallery !== 'row' && <img class="project-slide" src={imgSrc} alt={imgAlt} />} -->
     {
       gallery === 'grid' ? (
         <ImageGrid folder={imgSrc} />

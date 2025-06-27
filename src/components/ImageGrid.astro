@@ -1,40 +1,32 @@
 ---
 // @ts-nocheck
+import { Image } from 'astro:assets';
+
 const { folder = 'research' } = Astro.props;
 
-// 1) Use a relative glob from this file into your assets:
-//    `../assets/galleries/**/*.{jpg,jpeg,png,webp}`
-// 2) Tell Vite to load them eagerly at build‑time and
-//    to return the default export (the URL string).
 const allImages = import.meta.glob(
   '../assets/galleries/**/*.{jpg,jpeg,png,webp,gif}',
-  {
-    eager: true,
-    import: 'default',
-  }
+  { eager: true, import: 'default' }
 );
 
-// Filter & normalize into a pure string array:
+// console.log('🧪 Folder value:', folder);
+// console.log('📦 All image paths:', Object.keys(allImages));
+
+// Build the images array with manual inspection
 const images = Object.entries(allImages)
-  .filter(([filePath]) => filePath.includes(`/galleries/${folder}/`))
-  .map(([, mod]) => {
-    // If the module itself *is* a string, use it:
-    if (typeof mod === 'string') {
+  .map(([path, mod]) => {
+    console.log('🔍 Checking path:', path);
+    if (path.includes(`/${folder}/`)) {
+      console.log('✅ Matched path:', path);
       return mod;
+    } else {
+      return null;
     }
-    // Otherwise, try common keys for the URL:
-    if ('default' in mod && typeof mod.default === 'string') {
-      return mod.default;
-    }
-    if ('src' in mod && typeof mod.src === 'string') {
-      return mod.src;
-    }
-    // Fallback: grab the first export value and hope for a string
-    const firstVal = Object.values(mod)[0];
-    return typeof firstVal === 'string' ? firstVal : '';
   })
-  // Finally, drop any empties (just in case)
-  .filter(Boolean);
+  .filter(Boolean)
+  .filter((img) => typeof img === 'object' && 'src' in img);
+
+// console.log('🖼 Final image objects:', images);
 ---
 
 <style>
@@ -76,5 +68,9 @@ const images = Object.entries(allImages)
 </style>
 
 <div class="image-grid">
-  {images.map((src) => <img src={src} alt="Gallery image" loading="lazy" />)}
+  {
+    images.map((img) => (
+      <Image class="astro-image" src={img} alt="Gallery image" loading="lazy" />
+    ))
+  }
 </div>
