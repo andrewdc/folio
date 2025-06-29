@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Section from '../../../components/Section.astro';
+import Metric from '../../../components/Metric.astro';
+import Stats from '../../../components/Stats.astro';
+import Challenge from '../../../components/Challenge.astro';
+---
+
+<BaseLayout title="Incomm: Design System">
+	<Section
+		title="Incomm: Design System"
+		imagePosition="right"
+		imgSrc="incomm"
+		imgAlt="Img Alt"
+		gallery="grid"
+	>
+		<p>
+			At Incomm, I teamed up with another designer to build a modular Sass
+			design system. At the time, design systems were only just begining
+			to gain popularity. We built this from the ground up with some
+			innovative tools, which allowed any application to customize the
+			theme of our components, but then also have a safe fallback to our
+			base UX design.
+		</p>
+		<p>
+			This system (which we called Nxsass) allowed us to create and
+			support several teams and applications across our organization.
+			Also, we had a great area for prototyping user experience, and
+			interface designs.
+		</p>
+	</Section>
+</BaseLayout>

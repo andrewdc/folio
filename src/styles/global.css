@@ -6,12 +6,14 @@
   --space-lg: 32px;
   --space-xlg: 64px;
 
-  --color-bg: #222;
+  --color-bg: #fff;
   --color-section: #1f3042;
   --color-band: #fff;
   --color-text: #fff;
   --font-head: "Rokkitt";
-  --font-body: "Raleway"
+  --font-body: "Raleway";
+  --color-cha: #e29664;
+  --color-suc: #68acda;
 }
 
 html {
@@ -19,7 +21,10 @@ html {
   font-family: var(--font-body), sans-serif;
   background: var(--color-bg);
 }
-
+.content {
+  margin:0 auto;
+  max-width:1400px;
+}
 /* Headers and content */
 
 h2 {

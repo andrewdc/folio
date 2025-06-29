@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Section from '../../../components/Section.astro';
+import Metric from '../../../components/Metric.astro';
+import Stats from '../../../components/Stats.astro';
+import Challenge from '../../../components/Challenge.astro';
+---
+
+<BaseLayout title="ET Sign-up Refresh">
+	<Section
+		title="ExakTime: Sign-up Refresh"
+		imagePosition="right"
+		imgSrc="/img/projects/etsignup.gif"
+		imgAlt="ExakTime Sign-up Refresh"
+	>
+		<p>
+			At Arcoro, our time tracking application ExakTime had a quick set-up
+			flow that was clunky and due for a refresh. The sign up flow needed
+			to be self-serve, and minimize friction for the user. Additionally,
+			it needed an aesthetic refresh that was on brand, and built
+			excitement as the user was onboarded to ExakTime.
+		</p>
+		<Challenge>
+			<div slot="challenge">
+				<p>
+					Email confirmations often can result in abandonment or
+					confusion.
+				</p>
+			</div>
+			<div slot="solution">
+				<p>
+					The refreshed design removed distractions and focused on a
+					single goal each step. Clear indication of what to do next
+					was added. The email step used smart links to take the user
+					straight to their email box if possible.
+				</p>
+			</div>
+		</Challenge>
+
+		<p>
+			UI hints were added to help avoid mistakes, and give the user a
+			preview of how the information they entered would effect their
+			system. For instance, the Company Url field gives immediate feedback
+			based on what is entered.
+		</p>
+		<!-- <Stats>
+	  <Metric user="people" stat="100%" improvement="better things" />
+	  <Metric user="people" stat="100%" improvement="better things" />
+	  <Metric user="people" stat="100%" improvement="better things" />
+	</Stats> -->
+	</Section>
+</BaseLayout>

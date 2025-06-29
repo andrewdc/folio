@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import Metric from '../../components/Metric.astro';
+import Stats from '../../components/Stats.astro';
+import Challenge from '../../components/Challenge.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Design">
+	<div class="projects">
+		<ProjectCard
+			what="Time-Off"
+			who="Arcor | ExakTime"
+			imgSrc="/img/projects/timeoff-cover.png"
+			brief="A feature built to serve Administrators, Supervisors, and Crew Members"
+			url="et-time-off"
+		/>
+		<ProjectCard
+			what="Sign-up Refresh"
+			who="Arcoro | ExakTime"
+			imgSrc="/img/projects/et-signup.png"
+			brief="An onboarding flow design to walk the user through the process"
+			url="et-signup"
+		/>
+		<ProjectCard
+			what="Design System"
+			who="Powerschool"
+			imgSrc="/img/projects/pds-cover.png"
+			brief="wow what a project"
+			url="pds"
+		/>
+		<ProjectCard
+			what="Design System"
+			who="Incomm Digital"
+			imgSrc="/img/projects/nxsass.png"
+			brief="wow what a project"
+			url="nxsass"
+		/>
+		<ProjectCard
+			what="PressGaney: Practice Performer"
+			imgSrc="/img/projects/pg-cover.png"
+			brief="wow what a project"
+			url="pg"
+		/>
+	</div>
+	<Section
+		title="My Design Process"
+		imagePosition="right"
+		imgSrc="/img/projects/workflow.png"
+		imgAlt="My workflow"
+	>
+		<p>
+			My UX design process is highly collaborative. I work from early
+			research with the users and stakeholders, listening to their needs,
+			asking questions, and taking notes. I then spend time thinking
+			through what their story looks like.
+		</p>
+		<p>
+			I work with my team, to further define and clarify the user journey
+			and begin conceptualizing ideas of how to help them reach their
+			goals. Nothing is sacred. Ideas are meant to be questioned,
+			criticized, and sometimes scrapped.
+		</p>
+		<p>
+			I progress through this cycle between the user and product team to
+			refine ideas until we can present and test early prototypes and
+			gather further feedback. Even at this stage, nothing is off the
+			table. The purpose is to prove our design model before we commit to
+			more time consuming development.
+		</p>
+		<p>
+			A final design begins to take shape. Whether this results in Figma
+			comps, or functional web prototyping depends on the needs of our
+			team. Development may begin. However, the cycle of testing and
+			listening to users continues, with the goal of refining and
+			delivering proven and pleasant results.
+		</p>
+	</Section>
+</BaseLayout>
+
+<style>
+	.projects {
+		padding: 0 var(--space-lg);
+		display: grid;
+		grid-template-columns: repeat(2, minmax(400px, 1fr));
+		gap: 4rem;
+	}
+	@media (max-width: 768px) {
+		.projects {
+			padding: 0 var(--space-lg);
+			gap: var(--space-lg);
+			grid-template-columns: minmax(400px, 1fr);
+		}
+	}
+</style>

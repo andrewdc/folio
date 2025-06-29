@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Section from '../../../components/Section.astro';
+import Metric from '../../../components/Metric.astro';
+import Stats from '../../../components/Stats.astro';
+import Challenge from '../../../components/Challenge.astro';
+---
+
+<BaseLayout title="PowerSchool: Design System">
+	<Section
+		title="PowerSchool: Design System"
+		imagePosition="right"
+		imgSrc="powerschool"
+		imgAlt="Img Alt"
+		gallery="grid"
+	>
+		<p>
+			I was tapped, along with two other developers to build a
+			company-wide design system for PowerSchool from the ground up. It is
+			a component library built with Sass, Angular 2, and Polymer, and
+			consumed by several applications.
+		</p>
+		<p>
+			In the process our team overhauled our UX/UI library, enuring that
+			all existing and future interfaces were accessible and up to WCAG,
+			and ADA standards.
+		</p>
+		<p>
+			The system utilizes a flexible theme system, where we can provide
+			the base design for the organization, but also allow each team the
+			flexibility to customize and extend the library to fit their
+			application's unique needs.
+		</p>
+		<h3 class="outcomes">Outcomes</h3>
+		<Stats>
+			<Metric
+				user="Design & Dev:"
+				stat="1"
+				improvement="source for UI/UX"
+			/>
+			<Metric
+				user="User profiles:"
+				stat="4"
+				improvement="Admins, Teachers, Parents, Students"
+			/>
+			<Metric
+				user="School Systems:"
+				stat="15,000"
+				improvement="unified user experiences"
+			/>
+		</Stats>
+	</Section>
+</BaseLayout>

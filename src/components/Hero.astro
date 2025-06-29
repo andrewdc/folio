@@ -2,81 +2,80 @@
 const { name, title, text, imgSrc } = Astro.props;
 ---
 
-<section
-  class="hero bg-gray-900 bg-cover bg-center"
-  style={`background-image: url(${imgSrc}); background-size: cover; background-repeat: no-repeat;`}
->
+<section class="hero" style={`background-image: url(${imgSrc});`}>
   <div class="content">
     <h1 class="">
       <span class="name">{name}</span>
       <span class="title">{title}</span>
     </h1>
-    <h2 class="subhead">
+    <!-- <h2 class="subhead">
       {text}
-    </h2>
+    </h2> -->
   </div>
 </section>
 
 <style>
-  .content {
-    margin: 5vh auto;
-    max-width: 960px;
-  }
   section {
-    padding: var(--space-xlg) 15vw;
+    display: flex;
+    justify-content: end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    transition: all 0.25s ease-in-out;
+  }
+  .hero {
+    transition: all 0.2s ease-in-out;
+  }
+  .content {
+    margin: var(--space);
   }
   h1 {
     font-family: var(--font-head), serif, system-ui;
-    font-size: 6em;
+    font-size: 4em;
 
-    color: #fff;
+    color: #000;
     /* line-height: 150%; */
     /* margin: var(--space-lg) var(--space-lg) var(--space-lg); */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: right;
+    transition: all 0.25s ease-in-out;
     /* gap: var(--space); */
   }
   .name {
-    font-weight: 800;
+    font-weight: 600;
   }
   .title {
+    font-weight: 100;
     font-size: 0.6em;
-  }
-  .subhead {
-    font-family: var(--font-head), serif;
-    font-size: 2em;
-    font-weight: 100;
-    /* margin: var(--space-lg); */
-    line-height: 150%;
-    color: #fff;
-    font-family: var(--font-body), sans-serif;
-    font-weight: 100;
+    text-align: right;
   }
   @media (min-width: 1200px) {
-    .hero {
+    /* .hero {
       background-position-y: -50px;
-    }
+    } */
   }
   @media (max-width: 1200px) {
-
-    h1 {
-      font-size: 5em;
+    .hero {
+      background-position-y: 20px;
     }
-    .subhead {
-      font-size: 2em;
+    h1 {
+      font-size: 3em;
     }
     section {
-      padding: var(--space-xlg) 10vw;
+      /* padding: var(--space-xlg) 10vw; */
     }
   }
   @media (max-width: 768px) {
-    h1 {
-      font-size: 3.5em;
+    .hero {
+      background-position-y: 50px;
     }
-
-    .subhead {
-      font-size: 1.5em;
+    section {
+      background-size: contain;
+    }
+    h1 {
+      font-size: 2em;
     }
   }
 </style>

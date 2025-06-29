@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Section from '../../../components/Section.astro';
+import Metric from '../../../components/Metric.astro';
+import Stats from '../../../components/Stats.astro';
+import Challenge from '../../../components/Challenge.astro';
+---
+
+<BaseLayout title="ET Time Off">
+	<Section
+		title="ExakTime: Time Off"
+		imagePosition="right"
+		imgSrc="et-timeoff"
+		imgAlt="ExakTime Time Off Management"
+		gallery="grid"
+	>
+		<p>
+			Time off management was a critical feature for our users at Arcoro.
+			Our administrators needed to be able to create and assign time off
+			plans, our supervisors needed to approve requests for their teams,
+			and our crew member users needed to be able to easily see their time
+			off balances, and make requests.
+		</p>
+		<Challenge>
+			<div slot="challenge">
+				<p>
+					Time off plan tiers are incredibly complex, having many
+					conditional rules. It requires a lot of attention to detail
+					to avoid mistakes with how time is calculated between tiers.
+				</p>
+			</div>
+			<div slot="solution">
+				<p>
+					I designed an intuitive system for administrators to create
+					complex tier-based plans. The math for each tier was
+					pre-calculated and filled based on a previous tier, allowing
+					the admins to clearly understand each segment, and rapidly
+					add tiers a step at a time without making errors.
+				</p>
+			</div>
+		</Challenge>
+		<p>
+			For supervisors and crew members, we created a simple visual system
+			to easily make, approve, and modify time off requests via our mobile
+			application. Plan types, balances, and statuses were easily
+			understandable at a glance, streamlining the process for all users.
+		</p>
+		<h3>Outcomes</h3>
+		<Stats>
+			<Metric
+				user="Admins:"
+				stat="Simple"
+				improvement="plan creation and management"
+			/>
+			<Metric
+				user="Supervisors:"
+				stat="Timely"
+				improvement="requests and approvals"
+			/>
+			<Metric
+				user="Crew Members:"
+				stat="Visible"
+				improvement="balances and requests"
+			/>
+		</Stats>
+	</Section>
+</BaseLayout>
