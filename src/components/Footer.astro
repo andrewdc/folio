@@ -4,7 +4,7 @@ const { title, address, text } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="p-4 md:p-8 lg:p-10 bg-gray-800">
+<footer class="p-4 md:p-8 lg:p-10">
   <div class="mx-auto max-w-screen-xl text-center">
     <a
       href="www.linkedin.com/in/andrewdc"
@@ -36,6 +36,7 @@ const currentYear = new Date().getFullYear();
 <style>
   footer {
     margin-top: var(--space-lg);
+    background-color: #000;
   }
   .fp {
     color:#666;
