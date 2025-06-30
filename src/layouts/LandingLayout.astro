@@ -9,6 +9,13 @@ const { title = 'Welcome' } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>
+			Andrew Colclough – UX & UI Designer{title ? ` · ${title}` : ''}
+		</title>
+
+		<!-- Icons & Fonts -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,22 +24,37 @@ const { title = 'Welcome' } = Astro.props;
 			rel="stylesheet"
 		/>
 
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta property="og:image" content="img/ogmnt.jpg" />
+		<!-- Description -->
 		<meta
 			name="description"
-			property="og:description"
-			content="Andrew Colclough"
+			content="Andrew Colclough – UX & UI Designer"
 		/>
-		<title>Andrew Colclough - UX & UI Designer - {title}</title>
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:title"
+			content="Andrew Colclough – UX & UI Designer"
+		/>
+		<meta
+			property="og:description"
+			content="Crafting intuitive and delightful user experiences."
+		/>
+		<meta property="og:url" content="https://andrewdc.com/" />
+		<meta
+			property="og:image"
+			content="https://andrewdc.com/img/ogmnt.jpg"
+		/>
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 	</head>
 	<body>
 		<!-- Google tag (gtag.js) -->
 		<script
 			async
 			src="https://www.googletagmanager.com/gtag/js?id=G-VW7YDCM8G9"
-		></script>
+		>
+		</script>
 		<script>
 			// @ts-nocheck
 			window.dataLayer = window.dataLayer || [];
