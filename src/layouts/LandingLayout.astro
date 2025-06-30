@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+// Layouts can accept props like title, description, etc.
+const { title = 'Welcome' } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:image" content="img/hero.jpg" />
+		<meta
+			name="description"
+			property="og:description"
+			content="Andrew Colclough"
+		/>
+		<title>Andrew Colclough - UX & UI Designer - {title}</title>
+	</head>
+	<body>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-VW7YDCM8G9"
+		></script>
+		<script>
+			// @ts-nocheck
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-VW7YDCM8G9');
+		</script>
+		<main>
+			<!-- <header><h1>{title}</h1></header> -->
+
+			<!-- This renders the content of the page using this layout -->
+			<div class="content">
+				<slot />
+			</div>
+			<!-- <Footer
+				title="Let's connect!"
+				address="Example Address, 6 - Somewhere in the world (99999), Spain"
+				text="email, linkedin, etc"
+			/> -->
+		</main>
+	</body>
+</html>

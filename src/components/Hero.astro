@@ -20,7 +20,8 @@ const { name, title, text, imgSrc } = Astro.props;
     justify-content: end;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 50vh;
+    background-position: center;
+    min-height: 65vh;
     transition: all 0.25s ease-in-out;
   }
   .hero {
@@ -31,7 +32,7 @@ const { name, title, text, imgSrc } = Astro.props;
   }
   h1 {
     font-family: var(--font-head), serif, system-ui;
-    font-size: 4em;
+    font-size: 3.5em;
 
     color: #000;
     /* line-height: 150%; */
@@ -69,10 +70,12 @@ const { name, title, text, imgSrc } = Astro.props;
   }
   @media (max-width: 768px) {
     .hero {
-      background-position-y: 50px;
+      /* background-position-y: 50px; */
     }
     section {
       background-size: contain;
+      background-position: center;
+      min-height: 41vh;
     }
     h1 {
       font-size: 2em;
