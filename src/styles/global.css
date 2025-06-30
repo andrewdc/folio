@@ -12,15 +12,30 @@
   --color-text: #fff;
   --font-head: "Rokkitt";
   --font-body: "Raleway";
+  --color-accent: #0093ad;
   --color-cha: #e29664;
   --color-suc: #68acda;
 }
-
+html,body {
+    height: 100vh;
+    margin: 0;
+    /* overflow: hidden; */
+}
 html {
   min-width: 550px;
   font-family: var(--font-body), sans-serif;
   background: var(--color-bg);
 }
+body {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 550px; */
+}
+main {
+  /* flex: 1;
+  overflow-y: auto; */
+}
+
 .content {
   margin:0 auto;
   max-width:1400px;
@@ -42,7 +57,12 @@ h3 {
   font-size: 2.25rem;
   margin: 0.5em 0 1.2em 0;
 }
-
+@media (max-width: 768px) {
+  h2 {
+    font-size:2.5rem;
+    margin: 0.5em 0 0.5em 0;
+  }
+}
 p {
   margin-bottom:var(--space-lg);
   line-height:185%;

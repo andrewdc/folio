@@ -1,8 +1,40 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-
+import Masonry from '../../components/Masonry.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Illustration">
-ill
+	<h2>Illustrations</h2>
+
+	<p>
+		Here are a few samples of my illustration work. More
+		can be found on my Dribbble playbook: <a href="http://adc.dribble.com">
+			adc.dribbble.com
+		</a> and my Instagram:
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="https://www.instagram.com/bullet_and_whiskey/"
+		>
+			@bullet_and_whiskey
+		</a>
+	</p>
+	<h2>Ink</h2>
+
+	<Masonry folder="ink" />
+
+	<h2>Pencil</h2>
+
+	<Masonry folder="pencil" />
+
+	<h2>Maps and Tiles</h2>
+
+	<Masonry folder="maps" />
 </BaseLayout>
+
+<style>
+	a {
+		color: #0093ad;
+		text-decoration:underline;
+	}
+</style>

@@ -28,9 +28,16 @@ const currentYear = new Date().getFullYear();
       <a href="https://kuroshitec.com" class="hover:underline">KuroShi Tec</a>.
       All Rights Reserved.</span
     > -->
+    <div class="fp">© {new Date().getFullYear()} Andrew Colclough</div>
   </div>
   <slot />
-  <footer>© {new Date().getFullYear()} Andrew Colclough</footer>
 </footer>
 
-<style></style>
+<style>
+  footer {
+    margin-top: var(--space-lg);
+  }
+  .fp {
+    color:#666;
+  }
+</style>

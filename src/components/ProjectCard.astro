@@ -33,7 +33,7 @@ const { what, who, imgSrc, brief, url } = Astro.props;
 	}
 	.about {
 		flex: 1 1 auto;
-		padding: var(--space);
+		padding: 0 var(--space) 0 0;
 	}
 	.slide {
 		flex: 1 0 auto;
@@ -55,6 +55,12 @@ const { what, who, imgSrc, brief, url } = Astro.props;
 	@media (max-width: 768px) {
 		.project {
 			flex-direction: column;
+		}
+		.slide {
+			max-width: 100%;
+		}
+		.about {
+			padding: 0 0 var(--space) 0;
 		}
 	}
 </style>

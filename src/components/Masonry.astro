@@ -1,0 +1,67 @@
+---
+// @ts-nocheck
+import { Image } from 'astro:assets';
+
+const { folder = 'research' } = Astro.props;
+
+const allImages = import.meta.glob(
+	'../assets/galleries/**/*.{jpg,jpeg,png,webp,gif}',
+	{ eager: true, import: 'default' }
+);
+
+// console.log('🧪 Folder value:', folder);
+// console.log('📦 All image paths:', Object.keys(allImages));
+
+// Build the images array with manual inspection
+const images = Object.entries(allImages)
+	.map(([path, mod]) => {
+		console.log('🔍 Checking path:', path);
+		if (path.includes(`/${folder}/`)) {
+			console.log('✅ Matched path:', path);
+			return mod;
+		} else {
+			return null;
+		}
+	})
+	.filter(Boolean)
+	.filter((img) => typeof img === 'object' && 'src' in img);
+
+// console.log('🖼 Final image objects:', images);
+---
+
+<div class="masonry">
+	{
+		images.map((img) => (
+			<Image
+				class="astro-image"
+				src={img}
+				alt="Gallery image"
+				loading="lazy"
+			/>
+		))
+	}
+</div>
+
+<style>
+	.masonry {
+		column-count: 3;
+		column-gap: 1.5rem;
+	}
+
+	.masonry img {
+		width: 100%;
+		margin-bottom: 1.5rem;
+		border-radius: 0.5rem;
+		display: block;
+	}
+	@media (max-width: 1200px) {
+		.masonry {
+			column-count: 2;
+		}
+	}
+	@media (max-width: 768px) {
+		.masonry {
+			column-count: 1;
+		}
+	}
+</style>

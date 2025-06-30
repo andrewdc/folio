@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Nav from '../components/Nav.astro';
+import Sidenav from '../components/Sidenav.astro';
 import Footer from '../components/Footer.astro';
 // Layouts can accept props like title, description, etc.
 const { title = 'Welcome' } = Astro.props;
@@ -44,9 +44,8 @@ const { title = 'Welcome' } = Astro.props;
 			gtag('config', 'G-VW7YDCM8G9');
 		</script>
 		<main>
-			<Nav />
 			<!-- <header><h1>{title}</h1></header> -->
-
+			<Sidenav />
 			<!-- This renders the content of the page using this layout -->
 			<div class="content">
 				<slot />
@@ -59,3 +58,29 @@ const { title = 'Welcome' } = Astro.props;
 		</main>
 	</body>
 </html>
+
+<style>
+	main {
+		padding-top: 64px;
+	}
+	.content {
+		padding: 0 var(--space-xlg);
+		max-width: 1440px;
+	}
+	@media (max-width: 1200px) {
+		.content {
+			margin: 0 auto;
+			max-width: 768px;
+			padding: 0 var(--space);
+		}
+	}
+	@media (max-width: 768px) {
+		.content {
+			padding: 0 var(--space);
+		}
+		main {
+			padding-top: 0;
+			padding-bottom: 64px;
+		}
+	}
+</style>

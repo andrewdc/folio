@@ -8,6 +8,9 @@ import right from '../assets/draws/right.png?url';
 
 <!-- <a class="left" style={`background-image: url(${left});`} href="/design"> -->
 <section class="paths">
+	<a class="left" href="/">
+		<span>Home</span>
+	</a>
 	<a class="left" href="/design">
 		<span>UX Design</span>
 	</a>
@@ -21,27 +24,29 @@ import right from '../assets/draws/right.png?url';
 
 <style>
 	.paths {
-		padding: var(--space-xlg);
+		padding: var(--space) var(--space) var(--space) 0;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-evenly;
+		background: #ffffffde;
+		transition: all 0.25s ease-out;
+		/* flex-direction: column; */
 	}
 	a {
-		font-size:32px;
+		font-size: 26px;
+		line-height: 150%;
 		display: flex;
 		place-items: center;
-		place-content: center;
 		/* color: #fff;
 		background: #000; */
-		padding: var(--space-sm) var(--space-lg);
+		padding: var(--space-sm) var(--space-sm);
 		/* background: linear-gradient(120deg, #121e2b, #283f55, #111d2b); */
-		background-size: 200% 100%;
-		background-position: 100% 0;
+		/* background-size: 200% 100%; */
+		/* background-position: 100% 0; */
 		transition: background-position 0.5s;
 		/* border-color: #000000; */
 		/* border-radius: 32px; */
 		/* border: 1px solid #00000080; */
 		color: #000;
-
 
 		/* width: 200px;
 		height: 200px; */
@@ -49,15 +54,15 @@ import right from '../assets/draws/right.png?url';
 		background-position: center; */
 	}
 	a:hover {
+		color: var(--color-accent);
 		background-position: 0 0;
-		color:var(--color-accent);
 	}
 	@media (max-width: 768px) {
 		.paths {
-			padding: var(--space-lg);
+			padding: var(--space) var(--space) var(--space) 0;
 		}
 		a {
-			font-size:20px;
+			font-size: 18px;
 		}
 	}
 </style>

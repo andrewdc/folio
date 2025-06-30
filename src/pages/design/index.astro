@@ -5,9 +5,11 @@ import Metric from '../../components/Metric.astro';
 import Stats from '../../components/Stats.astro';
 import Challenge from '../../components/Challenge.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
+import Masonry from '../../components/Masonry.astro';
 ---
 
 <BaseLayout title="Design">
+	<h2>Featured Design Projects</h2>
 	<div class="projects">
 		<ProjectCard
 			what="Time-Off"
@@ -45,51 +47,44 @@ import ProjectCard from '../../components/ProjectCard.astro';
 			url="pg"
 		/>
 	</div>
-	<Section
-		title="My Design Process"
-		imagePosition="right"
-		imgSrc="/img/projects/workflow.png"
-		imgAlt="My workflow"
-	>
-		<p>
-			My UX design process is highly collaborative. I work from early
-			research with the users and stakeholders, listening to their needs,
-			asking questions, and taking notes. I then spend time thinking
-			through what their story looks like.
-		</p>
-		<p>
-			I work with my team, to further define and clarify the user journey
-			and begin conceptualizing ideas of how to help them reach their
-			goals. Nothing is sacred. Ideas are meant to be questioned,
-			criticized, and sometimes scrapped.
-		</p>
-		<p>
-			I progress through this cycle between the user and product team to
-			refine ideas until we can present and test early prototypes and
-			gather further feedback. Even at this stage, nothing is off the
-			table. The purpose is to prove our design model before we commit to
-			more time consuming development.
-		</p>
-		<p>
-			A final design begins to take shape. Whether this results in Figma
-			comps, or functional web prototyping depends on the needs of our
-			team. Development may begin. However, the cycle of testing and
-			listening to users continues, with the goal of refining and
-			delivering proven and pleasant results.
-		</p>
-	</Section>
+
+	<h2>Additional Designs</h2>
+
+	<p>
+		In my 15+ years as a designer, I have had the pleasure of working across
+		very diverse industries (and with many incredible people), including
+		Healthcare, Fintech, Education, Construction, Human Resources, and even
+		Games. Every case has presented unique challenges serving users with
+		wildly different needs and expectations. Here is a selection of
+		interfaces, prototypes, and experiences I have created and worked on
+		along this journey:
+	</p>
+
+	<Masonry folder="design-snaps" />
+
+
 </BaseLayout>
 
 <style>
 	.projects {
-		padding: 0 var(--space-lg);
 		display: grid;
 		grid-template-columns: repeat(2, minmax(400px, 1fr));
 		gap: 4rem;
 	}
+	@media (max-width: 1200px) {
+		.projects {
+			margin: 0 auto;
+			/* max-width: 768px; */
+			grid-template-columns: minmax(400px, 1fr);
+		}
+		/* h2 {
+			margin-left: 0 auto;
+			max-width: 768px;
+		} */
+	}
 	@media (max-width: 768px) {
 		.projects {
-			padding: 0 var(--space-lg);
+			/* padding: 0 var(--space-lg); */
 			gap: var(--space-lg);
 			grid-template-columns: minmax(400px, 1fr);
 		}

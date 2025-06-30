@@ -1,0 +1,23 @@
+---
+import MicroPaths from './MicroPaths.astro';
+---
+
+<nav>
+	<MicroPaths />
+</nav>
+
+<style>
+	nav {
+		position: fixed;
+		z-index: 10;
+		top: 0;
+		width: 100vw;
+	}
+	@media (max-width: 768px) {
+		nav {
+			top: auto;
+			bottom: 0;
+			width:100%;
+		}
+	}
+</style>
