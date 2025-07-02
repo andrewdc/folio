@@ -55,9 +55,12 @@ const { what, who, imgSrc, brief, url } = Astro.props;
 	@media (max-width: 768px) {
 		.project {
 			flex-direction: column;
+			
+			/* max-width:100%; */
 		}
 		.slide {
-			max-width: 100%;
+			align-self:center;
+			/* max-width: 90vw; */
 		}
 		.about {
 			padding: 0 0 var(--space) 0;

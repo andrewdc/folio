@@ -65,7 +65,7 @@ const { title = 'Welcome' } = Astro.props;
 
 			gtag('config', 'G-VW7YDCM8G9');
 		</script>
-		<main>
+		<main class="full">
 			<!-- <header><h1>{title}</h1></header> -->
 
 			<!-- This renders the content of the page using this layout -->
@@ -81,7 +81,7 @@ const { title = 'Welcome' } = Astro.props;
 	</body>
 </html>
 <style>
-	/* .content, main {
-		height:100%;
-	} */
+main.full {
+	margin:0;
+}
 </style>

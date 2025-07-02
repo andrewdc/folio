@@ -65,19 +65,20 @@ const { title = 'Welcome' } = Astro.props;
 
 			gtag('config', 'G-VW7YDCM8G9');
 		</script>
+		<Sidenav />
 		<main>
 			<!-- <header><h1>{title}</h1></header> -->
-			<Sidenav />
+
 			<!-- This renders the content of the page using this layout -->
 			<div class="content">
 				<slot />
 			</div>
-			<Footer
-				title="Let's connect!"
-				address="Example Address, 6 - Somewhere in the world (99999), Spain"
-				text="email, linkedin, etc"
-			/>
 		</main>
+		<Footer
+			title="Let's connect!"
+			address="Example Address, 6 - Somewhere in the world (99999), Spain"
+			text="email, linkedin, etc"
+		/>
 	</body>
 </html>
 
