@@ -17,12 +17,12 @@
   --color-suc: #68acda;
 }
 html,body {
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
     /* overflow: hidden; */
 }
 html {
-  min-width: 550px;
+  /* min-width: 550px; */
   font-family: var(--font-body), sans-serif;
   background: var(--color-bg);
 }
@@ -38,6 +38,7 @@ main {
 
 .content {
   margin:0 auto;
+  width:100%;
   max-width:1400px;
 }
 /* Headers and content */
