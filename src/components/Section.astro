@@ -51,7 +51,7 @@ const {
   .section-content {
     flex: 1 0 50%;
     color: #fff;
-    max-width:960px;
+    max-width: 960px;
   }
   @media (max-width: 1200px) {
     section {
@@ -59,11 +59,15 @@ const {
       margin: var(--space);
     }
   }
-
+  @media (max-width: 768px) {
+    section {
+      margin: 0;
+    }
+  }
   .gallery {
     /* display: flex;
     flex: 0 1 auto; */
-    align-self:center;
+    align-self: center;
   }
   .project-slide {
     width: 100%;
