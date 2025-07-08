@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/Section.astro';
 import Band from '../../../components/Band.astro';
-import Challenge from '../../../components/Challenge.astro';
+import Details from '../../../components/Details.astro';
 ---
 
 <BaseLayout title="User Experiences and AI">
@@ -22,7 +22,7 @@ import Challenge from '../../../components/Challenge.astro';
 			For more of my thoughts, I recently wrote a short post about how
 			designers should approach AI on LinkedIn:
 			<a
-				class="link" 
+				class="link"
 				target="_blank"
 				rel="noopener noreferrer"
 				href="https://www.linkedin.com/posts/andrewdc_many-people-ive-spoken-to-feel-that-ai-activity-7340733073027719171-viw9"
@@ -37,12 +37,26 @@ import Challenge from '../../../components/Challenge.astro';
 		imgSrc="arcai"
 		imgAlt="arc ai"
 		gallery="grid"
+		invert="true"
 	>
-		<p>
-			At Aroco, I designed and helped integrate an AI assistant feature
-			which could take user requests in normal human language, and help
-			them find solutions.
-		</p>
+		<div class="detail-block">
+			<p>
+				At Aroco, I designed and helped integrate an AI assistant
+				feature which could take user requests in normal human language,
+				and help them find solutions.
+			</p>
+			<Details
+				title2="Contributions"
+				extra={[
+					'User Research',
+					'Visual Design',
+					'Interaction Design',
+					'Prototyping/Coding',
+					'User Testing',
+				]}
+			/>
+		</div>
+
 		<h3>Growing Pains</h3>
 		<p>
 			As the Arocro platform grew we needed to address how our users would
@@ -74,11 +88,19 @@ import Challenge from '../../../components/Challenge.astro';
 			than having it make black box decisions for them.
 		</p>
 		<h3>Into the future</h3>
-		<p>
-			As this feature took on shape, it was clear AI can deliver an
-			interface to the user. This is an exciting and monumental shift in
-			how we should consider UX design.
-		</p>
+		<div class="detail-block">
+			<p>
+				As this feature took on shape, it was clear AI can deliver an
+				interface to the user. This is an exciting and monumental shift
+				in how we should consider UX design.
+			</p>
+			<Details
+				title1="Tools"
+				primary={['Figma', 'ChatGPT (api)', 'Internal Design System']}
+				title2="Collaboration"
+				extra={['UX Team', 'Product', 'Development']}
+			/>
+		</div>
 	</Section>
 </BaseLayout>
 

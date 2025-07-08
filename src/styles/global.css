@@ -26,6 +26,12 @@ html {
   /* min-width: 550px; */
   font-family: var(--font-body), sans-serif;
   background: var(--color-bg);
+
+}
+html.gen {
+  background: url('/img/millbg.jpg') bottom right no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
 }
 body {
   display: flex;
@@ -71,6 +77,13 @@ p {
   line-height:185%;
   font-size:20px;
 }
+ul {
+  margin-bottom: var(--space-lg);
+}
+li   {
+  padding:var(--space-xsm) var(--space);
+}
+
 .cta {
   display:flex;
   gap:var(--space);
@@ -101,5 +114,16 @@ footer {
         0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
         0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
         0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+  }
+}
+
+.detail-block {
+  display: flex;
+  padding:var(--space) 0;
+}
+
+@media (max-width: 768px) {
+  .detail-block {
+    flex-direction: column;
   }
 }

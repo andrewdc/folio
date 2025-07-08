@@ -1,0 +1,50 @@
+---
+const {
+	title1 = 'My Role',
+	primary = ['Feature Designer'],
+	title2 = '',
+	extra = [
+	],
+} = Astro.props;
+---
+
+<div class="details">
+	<div class="detail">
+		<h4>{title1}</h4>
+		{primary.map((data) => <div class="role">{data}</div>)}
+	</div>
+	<div class="detail">
+		<h4>{title2}</h4>
+		{extra.map((data) => <div class="contrib">{data}</div>)}
+	</div>
+</div>
+
+<style>
+	.details {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 0 var(--space);
+		gap: var(--space);
+	}
+	.detail {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		font-size:15px;
+	}
+	h4 {
+		opacity: 38%;
+		text-transform: uppercase;
+		font-family: var(--font-head);
+	}
+	.primary,
+	.extra {
+		font-size: 12px;
+	}
+	@media (max-width: 768px) {
+		.details {
+			flex-direction: column;
+		}
+	}
+</style>

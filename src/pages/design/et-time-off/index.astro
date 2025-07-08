@@ -4,48 +4,123 @@ import Section from '../../../components/Section.astro';
 import Metric from '../../../components/Metric.astro';
 import Stats from '../../../components/Stats.astro';
 import Challenge from '../../../components/Challenge.astro';
+import Details from '../../../components/Details.astro';
+import Band from '../../../components/Band.astro';
 ---
 
 <BaseLayout title="ET Time Off">
+	<Band>
+		<h2>HR Software: Time Off Feature</h2>
+		<h3>Problem</h3>
+		<div class="detail-block">
+			<div>
+				<p>
+					At Arcoro, I built software used in the HR industry. Our
+					core time-tracking product was called ExakTime, and it was
+					lacking a time off management feature. These feature needed
+					to work for three core users:
+				</p>
+
+				<ul>
+					<li>
+						<strong>Administrators</strong> needed to be able to create
+						and assign time off plans
+					</li>
+					<li>
+						<strong>Supervisors</strong> needed to manage and approve
+						requests for their teams
+					</li>
+					<li>
+						<strong>Crew Members</strong> needed to be able to easily
+						see their time off balances, and make requests
+					</li>
+				</ul>
+
+				<p>
+					Though I was a lead feature designer on all aspects of Time
+					Off, including the mobile application, first I focus on the
+					unique challenge for our Admin users with plan creation and
+					administration.
+				</p>
+			</div>
+			<Details
+				title2="Contributions"
+				extra={[
+					'User Research',
+					'Visual Design',
+					'Interaction Design',
+					'Prototyping/Coding',
+					'User Testing',
+				]}
+			/>
+		</div>
+	</Band>
 	<Section
-		title="ExakTime: Time Off"
+		title="Plan Management"
 		imagePosition="right"
-		imgSrc="et-timeoff"
+		imgSrc="et-timeoff/admin"
 		imgAlt="ExakTime Time Off Management"
 		gallery="grid"
 	>
+		<div class="detail-block">
+			<p>
+				Our research indicated that our admin users already had an idea
+				of how time off should work. Our product needed to build on our
+				admins' expectations, while not overloading them with
+				information or complexity.
+			</p>
+			<Details
+				title1="Tools"
+				primary={['Figma', 'Telerik', 'Internal Design System']}
+			/>
+		</div>
+
 		<p>
-			Time off management was a critical feature for our users at Arcoro.
-			Our administrators needed to be able to create and assign time off
-			plans, our supervisors needed to approve requests for their teams,
-			and our crew member users needed to be able to easily see their time
-			off balances, and make requests.
+			The example below is of a time of plan which includes different
+			tiers based on years with the company.
 		</p>
 		<Challenge>
 			<div slot="challenge">
 				<p>
-					Time off plan tiers are incredibly complex, having many
-					conditional rules. It requires a lot of attention to detail
-					to avoid mistakes with how time is calculated between tiers.
+					Time off plan tiers are interconnected. Put simply, changing
+					one tier affects all the others.
+				</p>
+				<p>
+					<strong>Hypothesis:</strong>
+					<em>
+						What if we carefully walked admins through each tier,
+						clearly indicating how each change would alter related
+						tiers?
+					</em>
 				</p>
 			</div>
 			<div slot="solution">
 				<p>
-					I designed an intuitive system for administrators to create
-					complex tier-based plans. The math for each tier was
-					pre-calculated and filled based on a previous tier, allowing
-					the admins to clearly understand each segment, and rapidly
-					add tiers a step at a time without making errors.
+					Through an iterative process, I designed tiers to follow a
+					step by step model, progressively updating and adding
+					interface elements as needed. All calculations were made
+					automatically as admins walked through each tier. This had
+					an additional benefit of reducing errors, as data could be
+					validated as tiers were created.
+				</p>
+				<p>
+					Our test admin users provided many scenarios which I had
+					them walk through once a prototype was created. This helped
+					inform and validate my design.
 				</p>
 			</div>
 		</Challenge>
+		<h2>User Testing Results</h2>
 		<p>
-			For supervisors and crew members, we created a simple visual system
-			to easily make, approve, and modify time off requests via our mobile
-			application. Plan types, balances, and statuses were easily
-			understandable at a glance, streamlining the process for all users.
+			Initially, my design allowed users to <em>
+				add and remove any tier
+			</em> in the series. However, this <strong>greatly</strong> increased
+			the complexity for our admins (and developers), and through their feedback
+			we settled on a simpler linear process, only allowing addition and removal
+			to the end tiers.
 		</p>
-		<h3>Outcomes</h3>
+
+		<!-- <h3>Outcomes</h3>
 		<Stats>
 			<Metric
 				user="Admins:"
@@ -62,6 +137,75 @@ import Challenge from '../../../components/Challenge.astro';
 				stat="Visible"
 				improvement="balances and requests"
 			/>
-		</Stats>
+		</Stats> -->
+	</Section>
+	<Band>
+		<h3>Problem</h3>
+		<p>There was no way for supervisors and crew members to view available time off or make requests.</p>
+		<p>
+			Though we also designed and built a responsive web solution for our <strong
+			>
+				supervisor
+			</strong> and <strong>crew members</strong>, here I will focus on
+			the mobile application.
+		</p>
+	</Band>
+	<Section
+		title="Requests and Approvals"
+		imagePosition="right"
+		imgSrc="et-timeoff/mobile"
+		imgAlt="ExakTime Time Off Management"
+		gallery="grid"
+	>
+		<Challenge>
+			<div slot="challenge">
+				<p>
+					For most employees using our app, time off was divided into different types
+					(e.g. PTO, Sick). Therefore each type could have a different balance.
+				</p>
+				<p>
+					<strong>Hypothesis:</strong>
+					<em>
+						An existing card UI could be modified to highlight
+						balances and separate plan types.
+					</em>
+				</p>
+			</div>
+			<div slot="solution">
+				<p>
+					User research indicated that our existing app structure was understood by our target users. For this reason I chose not to radically change the look and feel of the app for the time off feature. Instead, I adapted and expanded existing patterns to handle time off plan types and balances.
+
+
+				</p>
+				<p>
+					I designed every request with a high level summary, informing
+					users <strong>which plan</strong> they were pulling from, how
+					many hours they had <strong>accrued</strong>, and how many
+					hours each request was <strong>using</strong>.
+				</p>
+			</div>
+		</Challenge>
+		<p>
+			Supervisors required an additional flow which allowed them to see
+			pending requests, approve or deny them, and attach comments. Once
+			again, I extended an existing schedule UI to accommodate requests,
+			adding additional indicators for time off type and approval status.
+		</p>
+		<h2>User Testing Results</h2>
+		<p>
+			Initially, in my early designs, I tried to add all actions at the
+			top level of a request card. The reasoning was that supervisors
+			could take actions without drilling into a request.
+		</p>
+		<p>
+			However, working through feedback from our UX team and target users,
+			it was clear that only the most typical action, "Approve," was needed
+			at this level. Secondary actions were far less common, so denials
+			and modifications of requests were moved to a request "View" screen.
+			This resulted in a less complicated main view, while still providing
+			functionality for important secondary actions.
+		</p>
 	</Section>
 </BaseLayout>
+
+<style></style>
