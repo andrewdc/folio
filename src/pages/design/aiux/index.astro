@@ -3,9 +3,147 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/Section.astro';
 import Band from '../../../components/Band.astro';
 import Details from '../../../components/Details.astro';
+import Challenge from '../../../components/Challenge.astro';
+import { Image } from 'astro:assets';
+import nav from '../../../assets/galleries/arcai/nav/ai1.png';
 ---
 
 <BaseLayout title="User Experiences and AI">
+	<Band>
+		<h2>AI Navigation Assistant</h2>
+		<h3>Problem</h3>
+		<div class="detail-block">
+			<div>
+				<p>
+					As the Arocro platform grew we needed to address <strong>
+						how our users would navigate
+					</strong> our extensive product and its additional modules.
+				</p>
+				<p>
+					I spent time researching, designing, and testing a
+					traditional navigation system which could accommodate an
+					expanding portfolio of features, while being intuitive and
+					discoverable by our users.
+				</p>
+				<p>
+					<Image
+						class="astro-image"
+						src={nav}
+						alt="Traditional nav planning"
+						loading="lazy"
+					/>
+				</p>
+				<p>
+					However, during this work, useful AI tools had emerged and
+					our team felt it would be critical to consider how they
+					might be integrated to help with this problem and benefit our users.
+				</p>
+			</div>
+			<Details
+				title2="Contributions"
+				extra={[
+					'User Research',
+					'Conceptual Design',
+					'Interaction Design',
+					'Prototyping/Coding',
+					'User/Prompt Testing',
+				]}
+			/>
+		</div>
+	</Band>
+	<Section
+		title="Navigation AI Assistant"
+		imagePosition="right"
+		imgSrc="arcai/aimodal"
+		imgAlt="arc ai"
+		gallery="grid"
+		invert="true"
+	>
+		<div class="detail-block">
+			<div>
+				<p>
+					Artificial intelligence often flips the way that users
+					interact with computers. Traditional interactions usually
+					function like steering a computer toward a certain goal, or
+					building an idea from blocks. However, with AI the user
+					describes the goal (or final form), and the AI system
+					attempts to build it from its model and training.
+				</p>
+				<p>
+					This fundamental shift in thinking was pivotal to this
+					feature.
+				</p>
+			</div>
+			<Details
+				title1="Tools"
+				primary={['Figma', 'ChatGPT (api)', 'Internal Design System']}
+				title2="Collaboration"
+				extra={['UX Team', 'Product', 'Development']}
+			/>
+		</div>
+		<Challenge>
+			<div slot="challenge">
+				<p>
+					Users easily become overwhelmed as a complicated platform
+					adds features. Many functions can be lost, or buried in a
+					large system.</p>
+					<p>AI interactions pose unique challenges: they are new, their
+					reasoning can be unpredictable, and occasionally their
+					results are unreliable.
+					</p>
+					<strong>Hypothesis:</strong>
+					<em>
+						Could we implement AI in a helpful way that could build trust and benefit users?
+					</em>
+				</p>
+			</div>
+			<div slot="solution">
+				<p>
+					I designed and helped implement an AI navigation UX around the following principals:
+					<ul>
+						<li><strong>Optional</strong> for the user</li>
+						<li><strong>Focused</strong> and narrow in scope</li>
+						<li><strong>Guide</strong> the user by suggestion</li>
+						<li><strong>Verify</strong> AI responses before user action</li>
+					</ul>
+				</p>
+			</div>
+		</Challenge>
+		<p>As mentioned above, I spent time surveying user concerns internally and externally around application complexity, user overload, and specific issues important to how people respond to AI in applications. This research resulted in the principals laid out in my solution and expanded on below.</p>
+		<h3>Building User Trust</h3>
+		<p><strong>Optional:</strong> When testing this tool it was clear AI was helpful for discovering unknown actions, but also more cumbersome than traditional navigation for functions users already understood. Therefore, our assistant was designed and trained to <em>aid the user in navigation and feature discovery, but not to replace</em> traditional navigation. I wanted to emphasize user choice when using AI.</p>
+		<p><strong>Focused:</strong> The AI assistant was given a very limited scope (initially), only being trained how to direct users to application features. If asked questions outside the scope of its knowledge, it was given friendly responses that directed the user back toward its limited capabilities.</p>
+		<p><strong>Guide:</strong>
+			Because AI interactions are still new, often users may be uncertain where to start, or what they can ask. I designed our AI experience to included friendly prompt suggestions,
+			gently guiding the user toward things they could try, and different ways they could ask for help.
+		</p>
+		<p><strong>Verify:</strong>
+			Once the AI assistant responded, the user was given the choice to
+			<em>confirm</em> and follow the suggestion, <em>try something else</em>, or <em>exit</em>. For instance, if asked, <em>"How can I update Alison's profile image?"</em> the system would respond, <em>"You can update Alison's profile image on by editing her user page. Would you like to go there now?"</em>
+		</p>
+		<p>I added this validation step to <strong>keep choice in the hands of our users</strong>. It allowed them to verify results, experiment, and choose how the AI could help, rather
+			than having it automatically make hidden decisions for them.
+		</p>
+		
+	</Section>
+	<Section
+	title="Results"
+		imagePosition="right"
+		imgSrc="arcai/newai"
+		imgAlt="arc ai"
+		gallery="grid">
+		<h3>User Testing Feedback</h3>
+
+		<p>
+			Feedback from users was surprisingly positive, though usage metrics were varied. As noted in the 'Optional' section, once a feature was discovered via AI, user motivation to return to the tool dropped.
+		</p>
+		<p>Likely improvements could revolve around carefully expanding the AI's scope, functionality, and placement throughout our application UI. Perhaps AI could learn from user patterns, and begin to generate and suggest helpful prompts based on usage data. Or you can imagine the interface being able to explain and perform functions, rather than simply directing the user to where actions are located.</p>
+		<h3>Looking Forward</h3>
+		<p>As this feature took shape, it was clear AI could effectively deliver an
+			interface to the user, but there are still many areas for improvement.  This is an exciting and monumental shift in
+			how we should consider UX design, and will be vital to software design moving into the future. </p>
+	</Section>
+
 	<Band>
 		<h2>AI and User Experience</h2>
 		<p><em>A quick thought...</em></p>
@@ -31,77 +169,6 @@ import Details from '../../../components/Details.astro';
 			</a>
 		</p>
 	</Band>
-	<Section
-		title="Navigation AI Assistant"
-		imagePosition="right"
-		imgSrc="arcai"
-		imgAlt="arc ai"
-		gallery="grid"
-		invert="true"
-	>
-		<div class="detail-block">
-			<p>
-				At Aroco, I designed and helped integrate an AI assistant
-				feature which could take user requests in normal human language,
-				and help them find solutions.
-			</p>
-			<Details
-				title2="Contributions"
-				extra={[
-					'User Research',
-					'Visual Design',
-					'Interaction Design',
-					'Prototyping/Coding',
-					'User Testing',
-				]}
-			/>
-		</div>
-
-		<h3>Growing Pains</h3>
-		<p>
-			As the Arocro platform grew we needed to address how our users would
-			navigate around our extensive product and its various modules. I
-			spent a lot of time researching and designing a traditional
-			navigation system which could accommodate an expending portfolio of
-			features, while being intuitive and discoverable by our users.
-		</p>
-		<h3>Could AI help?</h3>
-		<p>
-			During this work, useful AI tools had emerged and our team felt it
-			would be critical to consider how they might be integrated to
-			benefit our users.
-		</p>
-		<h3>Learning, Building Trust</h3>
-		<p>
-			The initial scope was optional, working alongside our traditional
-			navigation. This was important for building user trust, making AI an
-			opt-in experience.
-		</p>
-		<p>
-			The assistant experience included friendly prompt suggestions,
-			gently guiding the user toward things they could try.
-		</p>
-		<p>
-			Once the AI assistant responded, the user was given the choice to
-			confirm and follow the suggestion, or try something else. This
-			allowed users to experiment and choose how the AI could help, rather
-			than having it make black box decisions for them.
-		</p>
-		<h3>Into the future</h3>
-		<div class="detail-block">
-			<p>
-				As this feature took on shape, it was clear AI can deliver an
-				interface to the user. This is an exciting and monumental shift
-				in how we should consider UX design.
-			</p>
-			<Details
-				title1="Tools"
-				primary={['Figma', 'ChatGPT (api)', 'Internal Design System']}
-				title2="Collaboration"
-				extra={['UX Team', 'Product', 'Development']}
-			/>
-		</div>
-	</Section>
 </BaseLayout>
 
 <style>
