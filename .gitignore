@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Session memory (ephemeral, machine-local)
+_session_hot.md
+_last_session.md

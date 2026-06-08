@@ -1,0 +1,93 @@
+# .claudeignore
+# Template with sections for common stacks.
+# Uncomment the sections that apply, remove the rest.
+
+# --- JS / Next.js (active by default) ---
+
+# Build artifacts
+.next/
+dist/
+build/
+out/
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Caches
+.cache/
+.turbo/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test output
+coverage/
+.nyc_output/
+
+# Environment files (security too)
+.env
+.env.local
+.env.*.local
+
+# Database files
+*.db
+*.sqlite
+prisma/migrations/
+
+# Media and binaries
+public/images/
+*.png
+*.jpg
+*.gif
+*.mp4
+
+# --- Python (uncomment if applicable) ---
+# __pycache__/
+# *.py[cod]
+# *.pyo
+# venv/
+# .venv/
+# env/
+# *.egg-info/
+# .pytest_cache/
+# .mypy_cache/
+# .ruff_cache/
+# htmlcov/
+# .coverage
+# dist/
+# build/
+
+# --- Go (uncomment if applicable) ---
+# vendor/
+# *.test
+# *.out
+# bin/
+
+# --- Java / Kotlin (uncomment if applicable) ---
+# target/
+# .gradle/
+# build/
+# *.class
+# *.jar
+# *.war
+# .kotlin/
+
+# --- iOS / Swift (uncomment if applicable) ---
+# Pods/
+# *.xcworkspace/
+# DerivedData/
+# *.ipa
+# *.dSYM.zip
+# *.dSYM
+
+# --- Android (uncomment if applicable) ---
+# .gradle/
+# local.properties
+# *.apk
+# *.aab
+# build/
+# .cxx/
