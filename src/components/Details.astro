@@ -11,11 +11,11 @@ const {
 <div class="details">
 	<div class="detail">
 		<h4>{title1}</h4>
-		{primary.map((data) => <div class="role">{data}</div>)}
+		{primary.map((data: string) => <div class="role">{data}</div>)}
 	</div>
 	<div class="detail">
 		<h4>{title2}</h4>
-		{extra.map((data) => <div class="contrib">{data}</div>)}
+		{extra.map((data: string) => <div class="contrib">{data}</div>)}
 	</div>
 </div>
 
